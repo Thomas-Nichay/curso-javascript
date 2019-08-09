@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+  <title>exercicio 1</title>
+</head>
+<body>
+  
+
+  <script>
+    var nomes = ["Diego", "Gabriel", "Lucas"];
+    var corpo = document.getElementsByTagName("body")[0];
+    var lista = document.createElement("ul");
+    for (const nome of nomes) {
+      lista.appendChild(document.createElement("li"));
+      lista.lastElementChild.innerHTML = nome;
+    }
+    corpo.appendChild(lista);
+  </script>
+</body>
+</html>
