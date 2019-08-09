@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+  <title>exercicio 1</title>
+</head>
+<body>
+  
+  <button id="btn">criar quadrado</button>
+
+  <script>
+    var botao = document.getElementById("btn");
+    var caixas;
+    botao.onclick = function () {
+      var corpo = document.getElementsByTagName("body")[0];
+      var caixaVermelha = document.createElement("div");
+      caixaVermelha.style.width = 100;
+      caixaVermelha.style.height = 100;
+      caixaVermelha.style.backgroundColor = "#f00";
+      caixaVermelha.onmouseover = function(){
+          caixaVermelha.style.backgroundColor = getRandomColor();
+      }
+      corpo.appendChild(caixaVermelha);
+    }
+
+    
+    
+
+    function getRandomColor() {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+  </script>
+</body>
+</html>
