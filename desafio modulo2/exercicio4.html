@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <title>exercicio 4</title>
+</head>
+<body>
+  <input type="text" name="nome">
+  <button onClick="adicionar()">Adicionar</button>
+
+  <script>
+    var nomes = ["Diego", "Gabriel", "Lucas"];
+    var corpo = document.getElementsByTagName("body")[0];
+    var lista = document.createElement("ul");
+    for (const nome of nomes) {
+      lista.appendChild(document.createElement("li"));
+      lista.lastElementChild.innerHTML = nome;
+    }
+    corpo.appendChild(lista);
+
+    function adicionar(){
+      var conteudo = document.querySelector("input[name=nome]").value;
+      document.querySelector("input[name=nome]").value = '';
+      lista.appendChild(document.createElement("li"));
+      lista.lastElementChild.innerHTML = conteudo;
+    }
+  </script>
+</body>
+</html>
