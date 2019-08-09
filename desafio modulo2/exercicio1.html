@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+  <title>exercicio 1</title>
+</head>
+<body>
+  
+  <button id="btn">criar quadrado</button>
+
+  <script>
+    var botao = document.getElementById("btn");
+    botao.onclick = function(){
+      var corpo = document.getElementsByTagName("body")[0]; 
+      var caixaVermelha = document.createElement("div");
+      caixaVermelha.style.width = 100;
+      caixaVermelha.style.height = 100;
+      caixaVermelha.style.backgroundColor = "#f00";
+      corpo.appendChild(caixaVermelha);
+    }
+  </script>
+</body>
+</html>
