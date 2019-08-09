@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <title>exercicio 1</title>
+</head>
+<body>
+  
+
+  <script>
+    var endereco = {
+      rua: "Rua dos pinheiros",
+      numero: 1293,
+      bairro: "Centro",
+      cidade: "São Paulo",
+      uf: "SP"
+    };
+
+    function toString(ender) {
+      if (ender != null) {
+        var s = "o usuário mora em " + ender.cidade + " / " + ender.uf 
+        + ", no bairro " + ender.bairro + ", na rua \"" + ender.rua 
+        + "\" com nº" + ender.numero;
+
+        return s;
+      }else{
+        return "objeto invalido"
+      }
+    }
+
+    console.log(toString(endereco));
+  </script>
+</body>
+</html>
