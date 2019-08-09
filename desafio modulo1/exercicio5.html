@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <title>exercicio 5</title>
+</head>
+<body>
+  <script>
+    var usuarios = [
+      {
+        nome: "Diego",
+        habilidades: ["Javascript", "ReactJS", "Redux"]
+      },
+      {
+        nome: "Gabriel",
+        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+      }
+    ];
+
+    function habil(usrs){
+      var s = '';
+      for (var usr of usrs) {
+        s += "O " + usr.nome + " possui as habilidades: " + usr.habilidades.join(", ") + "\n";
+      }
+
+      return s;
+    }
+    console.log(habil(usuarios));
+  </script>
+</body>
+</html>
