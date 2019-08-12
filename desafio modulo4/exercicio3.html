@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <title>exercicio 3</title>
+</head>
+<body>
+    <input type="text" name="user">
+    <button onclick="listarRepositorios()">Repsitorios</button>
+    
+    <ul></ul>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var listElement = document.querySelector('ul');
+        var inputElement = document.querySelector('input');
+
+        function listarRepositorios(){
+            var user = inputElement.value;
+            listElement.innerHTML = "<li>Carrengando...</li>";
+
+            axios.get("https://api.github.com/users/"+ user +"/repos")
+                .then(function (response) {
+                    listElement.innerHTML = '';
+                    inputElement.value = '';
+
+                    for (const repo of response.data) {
+                        listElement.appendChild(document.createElement('li'))
+                        listElement.lastChild.innerText = repo.name;
+                    }
+                })
+                .catch(function (error) {
+                    listElement.innerHTML = '';
+                    console.log(error);
+
+                    listElement.appendChild(document.createElement('li'))
+                    listElement.lastChild.innerText = "Erro!";
+                })
+        }
+
+    </script>
+</body>
+</html>
